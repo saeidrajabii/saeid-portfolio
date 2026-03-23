@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Sora, Source_Serif_4 } from "next/font/google";
+import { JetBrains_Mono, Lora, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
+const sans = Source_Sans_3({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const sourceSerif = Source_Serif_4({
+const serif = Lora({
   variable: "--font-serif",
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const mono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Saeid Rajabi | Portfolio",
+  title: "Saeid Rajabi / Academic Portfolio",
   description:
-    "Portfolio of Saeid Rajabi: Ph.D. candidate focused on hardware security, machine learning, and computer architecture.",
+    "Academic portfolio of Saeid Rajabi with publications, talks, teaching, portfolio, and CV.",
 };
 
 export default function RootLayout({
@@ -31,9 +31,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${sans.variable} ${serif.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
